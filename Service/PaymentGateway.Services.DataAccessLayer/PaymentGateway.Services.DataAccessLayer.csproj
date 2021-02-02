@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\PaymentGateway.Core.DataAccess\PaymentGateway.Core.DataAccess.csproj" />
+    <ProjectReference Include="..\PaymentGateway.Services.DataContracts\PaymentGateway.Services.DataContracts.csproj" />
+  </ItemGroup>
+
+</Project>

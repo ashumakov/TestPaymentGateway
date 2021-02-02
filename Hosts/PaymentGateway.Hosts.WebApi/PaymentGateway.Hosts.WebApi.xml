@@ -1,0 +1,282 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PaymentGateway.Hosts.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:PaymentGateway.Hosts.WebApi.Controllers.PaymentController">
+            <summary>
+            Controller allows submit payment for processing and retrieve info for previous payments
+            </summary>
+        </member>
+        <member name="M:PaymentGateway.Hosts.WebApi.Controllers.PaymentController.SubmitPayment(PaymentGateway.Hosts.WebApi.Models.PaymentRequest)">
+            <summary>
+            Submit payment information for processing
+            </summary>
+            <param name="request">Request contain all necessary information for payment</param>
+            <returns >A newly created Payment information</returns>
+            <response code="200">Returns the newly created item</response>
+        </member>
+        <member name="M:PaymentGateway.Hosts.WebApi.Controllers.PaymentController.RetrievePaymentInfo(PaymentGateway.Hosts.WebApi.Models.RetrievePaymentRequest)">
+            <summary>
+            Retrieves the details of a Payment that has previously been created
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PaymentGateway.Hosts.WebApi.Models.Address">
+            <summary>
+            Address
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.Address.City">
+            <summary>
+            City
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.Address.Country">
+            <summary>
+            Country
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.Address.State">
+            <summary>
+            State. Applicable for USA
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.Address.Street">
+            <summary>
+            Street, building and apt number
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.Address.Zip">
+            <summary>
+            Zip
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.Address.Phone">
+            <summary>
+            Phone
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.Address.FirstName">
+            <summary>
+            First name
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.Address.LastName">
+            <summary>
+            Last name
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.Address.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Hosts.WebApi.Models.AmountItem">
+            <summary>
+            Information about currency and 
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.AmountItem.Currency">
+            <summary>
+            Three-letter ISO currency code
+            Supported currency USD, EUR, PLN
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.AmountItem.Value">
+            <summary>
+            Value in provided currency
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Hosts.WebApi.Models.BankInfo">
+            <summary>
+            Acquiring bank info
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.BankInfo.TansactionId">
+            <summary>
+            Transaction ID
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.BankInfo.AuthCode">
+            <summary>
+            Authentication code
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.BankInfo.Status">
+            <summary>
+            Status
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.BankInfo.StatusCode">
+            <summary>
+            Status code
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Hosts.WebApi.Models.BaseRequest">
+            <summary>
+            Base request that contains security verification data
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.BaseRequest.MerchantId">
+            <summary>
+            Registered Merchant's ID
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Hosts.WebApi.Models.CardPaymentInfo">
+            <summary>
+            Credit card info
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.CardPaymentInfo.CardNumber">
+            <summary>
+            Card number
+            Visa                4111111111111111
+            MasterCard 	        5500000000000004
+            American Express 	340000000000009
+            Discover 	        6011000000000004
+            JCB 	            3088000000000009
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.CardPaymentInfo.CardSecurityCode">
+            <summary>
+            Card Verification Value
+            VISA, MasterCard, JCB and Discover is a 3 digit number  123
+            American Express is a 4 digit numeric code              1234
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.CardPaymentInfo.CardHolderName">
+            <summary>
+            Refers to the person who owns a credit or debit card
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.CardPaymentInfo.ExpirationDate">
+            <summary>
+            Two-digit code for the month and the last two digits of the year
+            E.g. Expiration Date November 2022 should be 11/22
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Hosts.WebApi.Models.OrderDetails">
+            <summary>
+            Order details from merchant
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.OrderDetails.DisplayItems">
+            <summary>
+            List of order items. E.g. position in shopping list, shipping details 
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.OrderDetails.Total">
+            <summary>
+            Total information
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Hosts.WebApi.Models.OrderItem">
+            <summary>
+            Order item
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.OrderItem.Label">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.OrderItem.Amount">
+            <summary>
+            Amount to display in invoice
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Hosts.WebApi.Models.PaymentRequest">
+            <summary>
+            Payment information
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.PaymentRequest.Card">
+            <summary>
+            Client credit card info
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.PaymentRequest.Amount">
+            <summary>
+            Total amount to take from client card
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.PaymentRequest.BillingAddress">
+            <summary>
+            Billing address. Optional parameter
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.PaymentRequest.ShippingAddress">
+            <summary>
+            Shipping address. Optional parameter
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.PaymentRequest.Order">
+            <summary>
+            Order detail information. Could be used in invoice. Optional parameter
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Hosts.WebApi.Models.PaymentResult">
+            <summary>
+            Result of payment operation
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.PaymentResult.PaymentId">
+            <summary>
+            Payment id in gateway
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.PaymentResult.MerchantId">
+            <summary>
+            Owner of payment
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.PaymentResult.CardNumber">
+            <summary>
+            Card number
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.PaymentResult.CardHolderName">
+            <summary>
+            Card holder name
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.PaymentResult.BillingAddress">
+            <summary>
+            Billing address provided in payment
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.PaymentResult.ShippingAddress">
+            <summary>
+            Shipping address provided in payment
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.PaymentResult.BankResponse">
+            <summary>
+            Information from acquiring bank
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.PaymentResult.Order">
+            <summary>
+            Order details saved from initial request 
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.PaymentResult.Amount">
+            <summary>
+            Amount details saved from initial request
+            </summary>
+        </member>
+        <member name="T:PaymentGateway.Hosts.WebApi.Models.RetrievePaymentRequest">
+            <summary>
+            Retrieves the details by PaymentId
+            </summary>
+        </member>
+        <member name="P:PaymentGateway.Hosts.WebApi.Models.RetrievePaymentRequest.PaymentId">
+            <summary>
+            PaymentId
+            </summary>
+        </member>
+    </members>
+</doc>
