@@ -10,7 +10,7 @@ using PaymentGateway.Core.DataAccess.Context;
 namespace PaymentGateway.Core.DataAccess.Migrations
 {
     [DbContext(typeof(GatewayContext))]
-    [Migration("20210202085340_Initial")]
+    [Migration("20210204084524_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
